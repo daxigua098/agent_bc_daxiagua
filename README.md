@@ -37,10 +37,14 @@ Copy-Item -Recurse -Force "$PWD\skills\daxigua" "$env:USERPROFILE\.codex\skills\
 方式二，从 GitHub 安装（把仓库推上去之后）：
 
 ```text
-使用 $skill-installer 从 github.com/<你的账号>/daxigua-agent 安装 skills/daxigua
+使用 $skill-installer 从 github.com/daxigua098/agent_bc_daxiagua 安装 skills/daxigua
 ```
 
 ## 推到 GitHub
+
+仓库地址：`git@github.com:daxigua098/agent_bc_daxiagua.git`（本机已配置好 origin 与本地提交身份 `daxigua098 <daxigua098@users.noreply.github.com>`，如需换成真实邮箱改本地 config 即可）。
+
+首次在新机器上初始化时：
 
 ```powershell
 git config --global user.name "你的名字"
@@ -49,13 +53,21 @@ git config --global user.email "you@example.com"
 git init -b main
 git add .
 git commit -m "feat(daxigua): 初始版本，含玩法/结算/账务/合规参考与学习日志"
-git remote add origin https://github.com/<你的账号>/daxigua-agent.git
+git remote add origin git@github.com:daxigua098/agent_bc_daxiagua.git
 git push -u origin main
 ```
 
 认证用个人访问令牌（PAT）或 SSH key。本机有 git，但没有安装 GitHub CLI（`gh`），需要的话可以 `winget install GitHub.cli` 后用 `gh auth login`。
 
 换机器或换项目时：克隆仓库，把 `skills/daxigua` 复制或链接到 `~/.codex/skills`，或直接用 `$skill-installer` 从仓库路径安装。
+
+日常更新（学习日志回写之后）：
+
+```powershell
+git add .
+git commit -m "learn(daxigua): <一句话结论>"
+git push
+```
 
 ## 怎么用
 
@@ -68,4 +80,3 @@ git push -u origin main
 技能内置了合规与安全约束：先确认辖区与持牌情况、数字必须有可追溯来源、不做欺骗性设计、不产出套利刷水或绕风控的方法。使用者仍需自行确认目标市场的法律与牌照要求。
 
 仓库内不得提交任何真实玩家数据、证件影像、支付信息、密钥或测试账号密码。
-
