@@ -7,6 +7,8 @@
 ```text
 daxigua-agent/
 |-- README.md
+|-- agents/
+|   `-- daxigua-reviewer.toml        配套的只读审查子代理
 |-- skills/
 |   `-- daxigua/
 |       |-- SKILL.md
@@ -76,7 +78,41 @@ git push
 
 - 显式调用：在 Codex 里输入 `$daxigua` 后描述任务，例如「写一份百家乐玩法规则说明书」「排查注单结算差异」。
 - 隐式触发：描述博彩类开发、文档、结算、返水、风控任务时，Codex 会按 skill 的 description 自动选用。
-- 修字体现在哪些方面：每写完一个博彩类项目，让它把新结论追加到 `learnings/learnings.md`，稳定的结论回写进对应参考文件。
+- 复用体现在哪些方面：每写完一个博彩类项目，让它把新结论追加到 `learnings/learnings.md`，稳定的结论回写进对应参考文件。
+
+## 配套子代理（可选）
+
+`agents/daxigua-reviewer.toml` 定义了一个只读审查子代理 `daxigua_reviewer`：`deepseek-v4-pro` + `high` 推理强度 + `sandbox_mode = "read-only"`，用来把审查工作派出去跟主线程并行跑。
+
+安装：把 `~/.codex/agents` 链接到本仓库的 `agents/`，避免出现两份副本。
+
+```powershell
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\agents" -Target "$PWD\agents"
+```
+
+不想用链接就手动复制（之后改仓库里的文件需要再复制一次）：
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\agents" | Out-Null
+Copy-Item .\agents\daxigua-reviewer.toml "$env:USERPROFILE\.codex\agents\"
+```
+
+同时打开的派生代理数量上限写在 `~/.codex/config.toml`：
+
+```toml
+[agents]
+max_concurrent_threads_per_session = 8
+```
+
+这个值指「同时打开的派生代理线程数上限，不含主代理」，不设置时由 Codex 取默认值，改完需要重启 Codex 生效。
+
+用法示例：
+
+```text
+Review this settlement module with daxigua_reviewer. Check odds conversion,
+void and half-win handling, ledger precision, and license checks.
+List P0/P1 issues with file references.
+```
 
 ## 边界
 
