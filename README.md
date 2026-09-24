@@ -19,6 +19,9 @@ daxigua-agent/
 |           |-- compliance-and-risk.md         牌照辖区、KYC、AML、风控
 |           |-- app-architecture.md            App/后台架构与厂商接入
 |           |-- deliverables-and-docs.md       PRD、规则说明书、测试与验收
+|           |-- lottery-payout-calc.md         高频彩任选玩法赔率与派彩核算
+|           |-- cases/
+|           |   `-- reusable-login-platform.md   案例：可复用登录平台
 |           `-- learnings/learnings.md          学习日志（跨项目经验）
 `-- docs/
     `-- daxigua-learnings.md           技能目录不可写时的项目内记录位置

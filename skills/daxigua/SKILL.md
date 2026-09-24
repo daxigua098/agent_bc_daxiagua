@@ -31,6 +31,8 @@ metadata:
 | PRD、玩法规则说明书、UI 文案、测试用例、验收清单 | [references/deliverables-and-docs.md](references/deliverables-and-docs.md) |
 | 历史项目结论、踩过的坑、已确认的厂商口径 | [references/learnings/learnings.md](references/learnings/learnings.md) |
 | 中英术语对照，统一文档与代码用词 | [references/glossary.md](references/glossary.md) |
+| 第三方平台登录、会话捕获与复用、客户端授权（机器码/IP/有效期）、采集与部署 | [references/cases/reusable-login-platform.md](references/cases/reusable-login-platform.md) |
+| 高频彩任选玩法赔率、派彩、抽水与盈亏期望核算 | [references/lottery-payout-calc.md](references/lottery-payout-calc.md) |
 
 写代码、设计库表、写接口文档之前，先看 glossary 与 learnings，避免同一个概念在不同模块出现两种叫法。
 
@@ -52,4 +54,3 @@ metadata:
 4. 新旧结论冲突时不要覆盖旧的，追加新条目并注明日期与来源，标「待复核」。
 5. 技能目录不可写时（沙箱或只读），在项目内 `docs/daxigua/learnings.md` 用同一格式记录，并在回复里提醒用户回同步。
 6. 学习记录随技能仓库一起提交 Git，提交信息用 `learn(daxigua): <一句话结论>`。
-
