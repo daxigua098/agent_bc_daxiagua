@@ -13,6 +13,9 @@ daxigua-agent/
 |   `-- daxigua/
 |       |-- SKILL.md
 |       |-- agents/openai.yaml        UI 显示名（大西瓜）与调用策略
+|       |-- assets/
+|       |   |-- rules-research-checklist.md     平台玩法调研采集清单
+|       |   `-- game-rules-spec-template.md     玩法规则说明书模板
 |       `-- references/
 |           |-- glossary.md                    中英术语对照
 |           |-- game-catalog.md                玩法大类与结算依据

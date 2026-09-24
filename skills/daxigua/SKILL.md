@@ -33,6 +33,7 @@ metadata:
 | 中英术语对照，统一文档与代码用词 | [references/glossary.md](references/glossary.md) |
 | 第三方平台登录、会话捕获与复用、客户端授权（机器码/IP/有效期）、采集与部署 | [references/cases/reusable-login-platform.md](references/cases/reusable-login-platform.md) |
 | 高频彩任选玩法赔率、派彩、抽水与盈亏期望核算 | [references/lottery-payout-calc.md](references/lottery-payout-calc.md) |
+| 调研某个平台的彩种玩法、出《玩法规则说明书》 | [assets/rules-research-checklist.md](assets/rules-research-checklist.md)、[assets/game-rules-spec-template.md](assets/game-rules-spec-template.md) |
 
 写代码、设计库表、写接口文档之前，先看 glossary 与 learnings，避免同一个概念在不同模块出现两种叫法。
 
